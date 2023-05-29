@@ -20,4 +20,3 @@ where (FOOD_TYPE, FAVORITES) in (
     from REST_INFO
     group by FOOD_TYPE)
 order by FOOD_TYPE desc
-    
