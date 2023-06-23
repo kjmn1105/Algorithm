@@ -1,5 +1,8 @@
 # [BOJ 1966] 프린터 큐
 from collections import deque
+import sys
+input = sys.stdin.readline
+
 케이스 = int(input())
 for _ in range(케이스):
     _, target_idx = map(int, input().split())
