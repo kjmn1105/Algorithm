@@ -1,12 +1,14 @@
-# SET @HOUR = -1;
-# select (@HOUR := @HOUR +1) as HOUR,
-#     (select count(*)
-#      from ANIMAL_OUTS
-#      where @HOUR = hour(DATETIME)) COUNT
-# from ANIMAL_OUTS
-# where @HOUR < 23;
+# 방법1 : 변수 설정
+SET @HOUR = -1;
+select (@HOUR := @HOUR +1) as HOUR,
+    (select count(*)
+     from ANIMAL_OUTS
+     where @HOUR = hour(DATETIME)) COUNT
+from ANIMAL_OUTS
+where @HOUR < 23;
 
 
+# 방법2 : recursive 쿼리 사용
 with recursive TIME_RANGE as (
     -- anchor 쿼리
     select 0 as hour
