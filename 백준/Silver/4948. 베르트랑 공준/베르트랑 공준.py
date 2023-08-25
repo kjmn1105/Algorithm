@@ -13,12 +13,10 @@ def is_prime(n):
             return False
     return True
 
-nums = [(1 if is_prime(i) else 0) for i in range(123456*2 + 1)]
-
+prime = [(1 if is_prime(i) else 0) for i in range(123456*2 + 1)]
 while True:
-    n = int(input().rstrip())
+    n = int(input())
     if n==0:
         break
     
-    cnt = sum([1 for i in range(n+1, 2*n+1) if nums[i]==1])
-    print(cnt)      
+    print(sum(prime[n+1:2*n+1]))
