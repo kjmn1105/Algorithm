@@ -1,5 +1,2 @@
-# SELECT COUNT (DISTINCT NAME)
-# FROM ANIMAL_INS
-
 select count(distinct NAME)
 from ANIMAL_INS
