@@ -1,5 +1,8 @@
-S = input()
-q = int(input())
+import sys
+input = sys.stdin.readline
+
+S = input().rstrip()
+q = int(input().rstrip())
 
 # 문자별 카운트 미리 만들어놓기 (dict)
 cnt = {ch : [0] for ch in "abcdefghijklmnopqrstuvwxyz"}
