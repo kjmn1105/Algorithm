@@ -1,8 +1,5 @@
 select 
-    t1.ANIMAL_ID, 
-    t1.ANIMAL_TYPE, 
-    t1.NAME
-from ANIMAL_INS t1
-join ANIMAL_OUTS t2 on t1.ANIMAL_ID = t2.ANIMAL_ID
-where SEX_UPON_INTAKE like 'Intact%' and SEX_UPON_OUTCOME not like 'Intact%'
+    T1.ANIMAL_ID, T1.ANIMAL_TYPE, T1.NAME
+from ANIMAL_OUTS T2, ANIMAL_INS T1
+where T1.ANIMAL_ID = T2.ANIMAL_ID and T1.SEX_UPON_INTAKE != T2.SEX_UPON_OUTCOME
 order by 1
