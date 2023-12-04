@@ -1,0 +1,8 @@
+select 
+    T1.ANIMAL_ID,
+    T1.NAME
+from ANIMAL_INS T1, ANIMAL_OUTS T2
+where 
+    T1.ANIMAL_ID = T2.ANIMAL_ID and
+    T1.DATETIME > T2.DATETIME
+order by T1.DATETIME
